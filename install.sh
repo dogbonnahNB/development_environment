@@ -11,6 +11,8 @@ swapon /dev/vg-workstation/swap
 apt-get install openjdk-8-jdk
 apt-get install openvpn
 
+export KUBERNETES_PROVIDER=aws; curl -sS https://get.k8s.io | bash
+
 OS=$(cat /etc/os-release|sed -e 's/"//'|grep ID_LIKE|awk -F '=' '{print $2}'|awk '{print $1}')
 
 if [ ${OS} == "debian" ]
