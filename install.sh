@@ -2,14 +2,14 @@
 set -eux
 
 swapoff /dev/vg-workstation/swap
-lvremove /dev/vg-workstation/swap
+lvremove -y /dev/vg-workstation/swap
 lvcreate -L 4G -n swap vg-workstation
 dd if=/dev/zero of=/dev/vg-workstation/swap bs=1M count=4096
 mkswap /dev/vg-workstation/swap
 swapon /dev/vg-workstation/swap
 
-apt-get install openjdk-8-jdk
-apt-get install openvpn
+apt-get -y install openjdk-8-jdk
+apt-get -y install openvpn
 
 curl -sS https://get.k8s.io | bash
 
