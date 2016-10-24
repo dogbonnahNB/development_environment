@@ -11,7 +11,7 @@ swapon /dev/vg-workstation/swap
 apt-get -y install openjdk-8-jdk
 apt-get -y install openvpn
 
-curl -sS https://get.k8s.io | bash
+curl -y -sS https://get.k8s.io | bash
 
 OS=$(cat /etc/os-release|sed -e 's/"//'|grep ID_LIKE|awk -F '=' '{print $2}'|awk '{print $1}')
 
