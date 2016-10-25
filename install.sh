@@ -8,6 +8,11 @@ dd if=/dev/zero of=/dev/vg-workstation/swap bs=1M count=4096
 mkswap /dev/vg-workstation/swap
 swapon /dev/vg-workstation/swap
 
+sed -i '8i SHELL=/bin/bash' /etc/default/useradd
+sed -i '9d' /etc/default/useradd
+sed -i '6i DSHELL=/bin/bash' /etc/adduser.conf
+sed -i '7d' /etc/adduser.conf
+
 apt-get -y install openjdk-8-jdk
 apt-get -y install openvpn
 
