@@ -16,7 +16,8 @@ sed -i '7d' /etc/adduser.conf
 apt-get -y install openjdk-8-jdk
 apt-get -y install openvpn
 
-curl -y -sS https://get.k8s.io | bash
+curl -y -Lo kubectl http://storage.googleapis.com/kubernetes-release/release/v1.3.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+curl -y -Lo minikube https://storage.googleapis.com/minikube/releases/v0.12.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 
 OS=$(cat /etc/os-release|sed -e 's/"//'|grep ID_LIKE|awk -F '=' '{print $2}'|awk '{print $1}')
 
