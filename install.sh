@@ -13,6 +13,9 @@ sed -i '9d' /etc/default/useradd
 sed -i '6i DSHELL=/bin/bash' /etc/adduser.conf
 sed -i '7d' /etc/adduser.conf
 
+sed -i '6i XKBLAYOUT="gb"' /etc/default/keyboard
+sed -i '7d' /etc/default/keyboard
+
 apt-get -y install openjdk-8-jdk
 apt-get -y install openvpn
 
