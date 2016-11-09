@@ -42,12 +42,12 @@ pip install --upgrade pip setuptools ansible
 mkdir -p /opt/GIT
 cd /opt/GIT
 
-if [ ! -d development_environment ]
+if [ ! -d development_environment1 ]
 then
-  git clone https://github.com/UKHomeOffice/development_environment.git development_environment
+  git clone https://github.com/dogbonnahNB/development_environment.git development_environment1
 fi
 
-cd development_environment
+cd development_environment1
 git fetch
 git clean -fxd
 git reset --hard

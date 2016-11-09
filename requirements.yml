@@ -3,7 +3,7 @@
   version: 0.0.2
   name: audit-hardening
 
-- src: https://github.com/KEAOSolutions/ansible-os-hardening
+- src: https://github.com/dogbonnahNB/ansible-os-hardening.git
   version: 3.1.0.6
   name: os-hardening
 
