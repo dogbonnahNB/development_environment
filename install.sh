@@ -1,12 +1,12 @@
 #!/bin/bash
 set -eux
 
-#swapoff /dev/vg-workstation/swap
-#lvremove -y /dev/vg-workstation/swap
-#lvcreate -L 4G -n swap vg-workstation
-#dd if=/dev/zero of=/dev/vg-workstation/swap bs=1M count=4096
-#mkswap /dev/vg-workstation/swap
-#swapon /dev/vg-workstation/swap
+swapoff /dev/vg-workstation/swap
+lvremove -y /dev/vg-workstation/swap
+lvcreate -L 4G -n swap vg-workstation
+dd if=/dev/zero of=/dev/vg-workstation/swap bs=1M count=4096
+mkswap /dev/vg-workstation/swap
+swapon /dev/vg-workstation/swap
 
 sed -i '8i SHELL=/bin/bash' /etc/default/useradd
 sed -i '9d' /etc/default/useradd
@@ -56,9 +56,9 @@ git fetch
 git clean -fxd
 git reset --hard
 
-TAG=${TAG:-$(git tag | tail -n 1)}
-echo "Running with Tag: ${TAG}"
-git checkout ${TAG}
+#TAG=${TAG:-$(git tag | tail -n 1)}
+#echo "Running with Tag: ${TAG}"
+#git checkout ${TAG}
 
 ansible-galaxy install -r requirements.yml
 
