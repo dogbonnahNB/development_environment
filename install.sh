@@ -1,12 +1,12 @@
 #!/bin/bash
 set -eux
 
-swapoff /dev/vg-workstation/swap
-lvremove -y /dev/vg-workstation/swap
-lvcreate -L 4G -n swap vg-workstation
-dd if=/dev/zero of=/dev/vg-workstation/swap bs=1M count=4096
-mkswap /dev/vg-workstation/swap
-swapon /dev/vg-workstation/swap
+#swapoff /dev/vg-workstation/swap
+#lvremove -y /dev/vg-workstation/swap
+#lvcreate -L 4G -n swap vg-workstation
+#dd if=/dev/zero of=/dev/vg-workstation/swap bs=1M count=4096
+#mkswap /dev/vg-workstation/swap
+#swapon /dev/vg-workstation/swap
 
 sed -i '8i SHELL=/bin/bash' /etc/default/useradd
 sed -i '9d' /etc/default/useradd
@@ -46,9 +46,9 @@ cd /opt/GIT
 if [ ! -d development_environment]
 then
   git clone https://github.com/dogbonnahNB/development_environment.git development_environment
-else
-  rm -rf development_environment
-  git clone https://github.com/dogbonnahNB/development_environment.git development_environment
+#else
+#  rm -rf development_environment
+#  git clone https://github.com/dogbonnahNB/development_environment.git development_environment
 fi
 
 cd development_environment
