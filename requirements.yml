@@ -5,7 +5,7 @@
 
 - src: https://github.com/dogbonnahNB/ansible-os-hardening
   version: 3.1.0.6
-  name: os-hardening
+  name: ansible-os-hardening
 
 - src: https://github.com/KEAOSolutions/ansible-ssh-hardening
   version: 3.1.0.1
