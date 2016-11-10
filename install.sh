@@ -53,6 +53,9 @@ fi
 
 cd development_environment
 
+git submodule init
+git submodule update
+
 ansible-galaxy install -r requirements.yml
 
 ansible-playbook -i hostfile -v site.yml
