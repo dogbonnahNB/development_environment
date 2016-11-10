@@ -1,0 +1,3 @@
+[submodule "os-hardening"]
+    path = roles/os-hardening
+    url = http://github.com/dogbonnahNB/ansible-os-hardening.git
